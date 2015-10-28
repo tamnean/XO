@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+//comment
 public class Manager : MonoBehaviour {
 	private int numCheck=1;
 	private bool click;
