@@ -1,11 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-<<<<<<< HEAD
 //comment
-=======
-
->>>>>>> parent of 9169e0d... Revert "Intitial"
 public class Manager : MonoBehaviour {
 	private int numCheck=1;
 	private bool click;
