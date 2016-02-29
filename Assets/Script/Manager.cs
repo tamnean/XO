@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-//comment
+
 public class Manager : MonoBehaviour {
 	private int numCheck=1;
 	private bool click;
@@ -37,10 +37,7 @@ public class Manager : MonoBehaviour {
 	}
 
 	void Update () {
-		click = Input.GetMouseButtonDown (0);
 		numCheck = numCheck % 2;
-		if (click == true)
-			numCheck += 1;
 		onClickChange ();
 		OnWinLoseDraw ();
 	}
@@ -53,6 +50,8 @@ public class Manager : MonoBehaviour {
 	}
 
 	public void On11(){
+		numCheck += 1;
+		a.enabled = false;
 		A11.text = XO;
 		checkDraw += 1;
 		if (A11.text == "X") {
@@ -64,9 +63,10 @@ public class Manager : MonoBehaviour {
 			b1 -= 1;
 			ab -= 1;
 		}
-		a.enabled = false;
 	}
 	public void On12(){
+		numCheck += 1;
+		b.enabled = false;
 		A12.text = XO;
 		checkDraw += 1;
 		if (A12.text == "X") {
@@ -76,9 +76,10 @@ public class Manager : MonoBehaviour {
 			a1 -= 1;
 			b2 -= 1;
 		}
-		b.enabled = false;
 	}
 	public void On13(){
+		numCheck += 1;
+		c.enabled = false;
 		A13.text = XO;
 		checkDraw += 1;
 		if (A13.text == "X") {
@@ -90,9 +91,10 @@ public class Manager : MonoBehaviour {
 			b3 -= 1;
 			ba -= 1;
 		}
-		c.enabled = false;
 	}
 	public void On21(){
+		numCheck += 1;
+		d.enabled = false;
 		A21.text = XO;
 		checkDraw += 1;
 		if (A21.text == "X") {
@@ -102,9 +104,10 @@ public class Manager : MonoBehaviour {
 			a2 -= 1;
 			b1 -= 1;
 		}
-		d.enabled = false;
 	}
 	public void On22(){
+		numCheck += 1;
+		e.enabled = false;
 		A22.text = XO;
 		checkDraw += 1;
 		if (A22.text == "X") {
@@ -118,11 +121,12 @@ public class Manager : MonoBehaviour {
 			ab -= 1;
 			ba -= 1;
 		}
-		e.enabled = false;
 	}
 	public void On23(){
+		numCheck += 1;
 		A23.text = XO;
 		checkDraw += 1;
+		f.enabled = false;
 		if (A23.text == "X") {
 			a2 += 1;
 			b3 += 1;
@@ -130,9 +134,11 @@ public class Manager : MonoBehaviour {
 			a2 -= 1;
 			b3 -= 1;
 		}
-		f.enabled = false;
+
 	}
 	public void On31(){
+		numCheck += 1;
+		g.enabled = false;
 		A31.text = XO;
 		checkDraw += 1;
 		if (A31.text == "X") {
@@ -144,11 +150,12 @@ public class Manager : MonoBehaviour {
 			b1 -= 1;
 			ba -= 1;
 		}
-		g.enabled = false;
 	}
 	public void On32(){
-		A32.text = XO;
+		numCheck += 1;
 		checkDraw += 1;
+		A32.text = XO;
+		h.enabled = false;
 		if (A32.text == "X") {
 			a3 += 1;
 			b2 += 1;
@@ -157,9 +164,10 @@ public class Manager : MonoBehaviour {
 			a3 -= 1;
 			b2 -= 1;
 		}
-		h.enabled = false;
 	}
 	public void On33(){
+		numCheck += 1;
+		i.enabled = false;
 		A33.text = XO;
 		checkDraw += 1;
 		if (A33.text == "X") {
@@ -171,7 +179,6 @@ public class Manager : MonoBehaviour {
 			b3 -= 1;
 			ab -= 1;
 		}
-		i.enabled = false;
 	}
 
 	void OnWinLoseDraw(){
@@ -187,6 +194,7 @@ public class Manager : MonoBehaviour {
 		else if(checkDraw==9){
 			Draw.SetActive(true);
 			Invoke ("OnLoad",3);
+			checkDraw =0;
 		}
 	}
 
